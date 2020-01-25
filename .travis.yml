@@ -16,4 +16,4 @@ after_script:
   - docker-compose logs db
 
   # upload coverage report
-  - bash <(curl -s https://codecov.io/bash)
+  - codecov
