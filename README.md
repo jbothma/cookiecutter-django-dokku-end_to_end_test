@@ -1,0 +1,16 @@
+Running tests
+-------------
+
+    docker-compose --env-file test.env run --rm web pytest --cov=.
+
+Tests might fail to connect tot he databse if the docker-compose `db` service wasn't running and configured yet. Just check the logs for the `db` service and run the tests again.
+
+
+Adding dependencies using Pipenv
+--------------------------------
+
+Run the container as root to have permission to change files
+
+    docker-compose run -u root web bash
+
+and in that shell install what you need

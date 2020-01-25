@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    command: ./manage.py runserver 0.0.0.0:8000
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=postgresql://end_to_end_test@db/end_to_end_test
+      - DJANGO_DEBUG_TOOLBAR=${DJANGO_DEBUG_TOOLBAR}
+      - DJANGO_SECRET_KEY=not-secret-in-dev
+
+  db:
+    image: postgres:11.6
+    environment:
+      - POSTGRES_USER=end_to_end_test
+      - POSTGRES_DB=end_to_end_test
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
