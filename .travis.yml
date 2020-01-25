@@ -18,4 +18,4 @@ after_script:
 
   # upload coverage report. Relies on .coverage being mapped out of the container
   # to the current directory.
-  - codecov
+  - "docker-compose run --rm `bash <(curl -s https://codecov.io/env)` web codecov"
