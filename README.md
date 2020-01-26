@@ -9,6 +9,10 @@ Complete project setup
   - [ ] Enable GitHub integration - it automatically configures Travis-CI and shows coverage diffs in pull requests
   - [ ] Verify that you see coverage % on the Commits tab for the project. If it's just zero, check for errors by clicking a commit item.
 
+Development setup
+-----------------
+
+
 
 Running tests
 -------------
