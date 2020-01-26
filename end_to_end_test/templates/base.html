@@ -1,13 +1,25 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{{cookiecutter.project_slug}}</title>
+    <title>{% block title %}end_to_end_test{% endblock %}</title>
+    {% block meta %}
+    <meta property="description" content="{% block description %}A project started using OpenUp's Django Cookiecutter{% endblock %}" />
+    <meta name="twitter:title" content="{% block twitter_title %}end_to_end_test{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}A project started using OpenUp's Django Cookiecutter{% endblock %}">
+    <meta name="twitter:card" content="summary">
+    <meta property="og:title" content="{% block og_title %}end_to_end_test{% endblock %}" />
+    <meta property="og:description" content="{% block og_description %}A project started using OpenUp's Django Cookiecutter{% endblock %}" />
+    {% endblock %}
+
+    <link rel="stylesheet" href="{% static "scss/end_to_end_test.css" %}">
   </head>
   <body>
     {% block content %}{% endblock %}
+
+    <script src="{% static "js/end_to_end_test.js" %}" async></script>
   </body>
 </html>
-

@@ -15,6 +15,7 @@ services:
       - DATABASE_URL=postgresql://end_to_end_test@db/end_to_end_test
       - DJANGO_DEBUG_TOOLBAR=${DJANGO_DEBUG_TOOLBAR}
       - DJANGO_SECRET_KEY=not-secret-in-dev
+      - DJANGO_WHITENOISE_AUTOREFRESH=True
 
   db:
     image: postgres:11.6
